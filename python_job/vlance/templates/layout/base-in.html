@@ -1,0 +1,381 @@
+{% include 'layout/header.html' %}
+{% load static %}
+
+{% comment %}{% include 'layout/sys.html' %}{% endcomment %}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.i32-mail').click(function(e) {
+            $('.dropdown-menu').addClass('menuhiden');
+            $('.block-new-message').toggle();
+            e.stopPropagation();
+        });
+        $('body').click(function() {
+            $('.dropdown-menu').removeClass('menuhiden');
+            $('.block-new-message').hide();
+        });
+        $('.block-new-message').click(function(e){
+            e.stopPropagation();
+        });
+    });
+
+    $(function(){
+        $(window).scroll(function(){
+            var aTop = 21, mTop = 1;
+            if($(this).scrollTop()>=aTop){
+                $('.menu_scoll').addClass('menu_scoll_display');
+                $('.pull-right.nav-account').addClass('account-mail-menu');
+                $('account-mail-menu').show();
+                $('.upper_scoll').addClass('upper_scoll_display');
+            };
+            if($(this).scrollTop() <= (aTop)){
+                $('.menu_scoll').removeClass('menu_scoll_display');
+                $('.menu_scoll').addClass('menu_scoll');
+                $('.pull-right.nav-account').removeClass('account-mail-menu');
+                $('account-mail-menu').hide();
+                $('.upper_scoll').removeClass('upper_scoll_display');
+                $('.upper_scoll').addClass('upper_scoll');
+            }
+            if($(this).scrollTop()>=mTop){
+                $('.navbar-static-top.display-mobile').addClass('menu_scoll_display');
+            }
+            if($(this).scrollTop()<mTop){
+                $('.navbar-static-top.display-mobile').removeClass('menu_scoll_display');
+            }
+        });
+    });
+</script>
+<script type="text/javascript"> //Menu mobile
+    $(document).ready(function(){
+        /*Hiện menu trái*/
+        $(".icon-hamberger a").click(function(){
+            $(".overlay-transparent-grey").removeClass("show-grey").delay().queue(function(next){
+                $(this).addClass("show-grey-1");
+                next();
+            });
+            $(".overlay-left").show();
+            $(".overlay-left").addClass("show");
+        });
+        /*Hiện menu phải*/
+        $(".icon-dropdown, .list-menu .button.avata").click(function(){
+            $(".overlay-transparent-grey").removeClass("show-grey").delay().queue(function(next){
+                $(this).addClass("show-grey-1");
+                next();
+            });
+            $(".overlay-right").show();
+            $(".overlay-right").addClass("show");
+        });
+        /*Đóng menu*/
+        $(".overlay-left .close-button, .overlay-right .close-button, .overlay-transparent-grey, #btn-register-mobile, #btn-login-mobile").on('click', function(){
+            $(".overlay-right, .overlay-left").removeClass("show");
+            $(".overlay-transparent-grey").removeClass("show-grey-1").delay(500).queue(function(next){
+                $(this).addClass("show-grey");
+                next();
+            });
+        });
+    });
+</script>
+        <!-- Google Tag Manager (noscript) Updated 14/11/2017 -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WM92T4"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+
+                            <div id="messages">
+        <div class="body-messages">
+                    </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            setTimeout( "$('#messages').hide();", 7000);
+        });
+    </script>
+
+<div class="top_content">
+                            </div>
+
+
+{% block content %}
+
+{% endblock %}
+
+
+
+
+            <div id="footer_content">
+                                        <div class="block">
+    <footer>
+    <div class="footer-links-parter">
+        <div class="container">
+            <div class="row-fluid vl-relationship">
+                <div class="vl-funding span4">
+                    <p>Tài trợ</p>
+                    <div class="google-footer">
+                        <a href="https://www.google.com/" target="_blank" rel="nofollow" title="Google" alt="Google"></a>
+                    </div>
+                    <div class="aws-footer">
+                        <a href="https://aws.amazon.com/" target="_blank" rel="nofollow" title="Amazon web services" alt="Amazon web services"></a>
+                    </div>
+                    <div class="mixpanel-footer">
+                        <a href="https://mixpanel.com/f/partner" target="_blank" rel="nofollow" title="Mobile Analytics" alt="Mobile Analytics"></a>
+                    </div>
+                </div>
+                <div class="vlance-partner span8">
+                    <p>Đối tác</p>
+                    <div class="kicoworking-footer">
+                        <a target="_blank" rel="nofollow" title="Kicoworking" alt="Kicoworking"></a>
+                    </div>
+                    <div class="magestore-footer">
+                        <a target="_blank" rel="nofollow" title="Magestore" alt="Magestore"></a>
+                    </div>
+                    <div class="money-lover-footer">
+                        <a target="_blank" rel="nofollow" title="Money Lover" alt="Money Lover"></a>
+                    </div>
+                    <div class="topcv-footer">
+                        <a target="_blank" rel="nofollow" title="TopCv" alt="TopCv"></a>
+                    </div>
+                    <div class="ybox-footer">
+                        <a target="_blank" rel="nofollow" title="Ybox.vn" alt="Ybox.vn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-links-section grey-bg">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span4 category-block">
+                    <div class="job-category span6">
+                        <h4><a title="Việc phổ biến nhất">Việc phổ biến nhất</a></h4>
+                        <div class="row-fluid">
+                                                        <ul class="first span12">
+                                <li><a href="viec/lap-trinh-web.html">Việc làm web</a></li>
+                                <li><a href="viec/ung-dung-di-dong.html">Việc lập trình di động</a></li>
+                                <li><a href="viec/toi-uu-cho-cong-cu-tim-kiem-seo.html">Việc làm SEO</a></li>
+                                <li><a href="viec/cac-cong-viec-marketing-kinh-doanh.html">Việc marketing online</a></li>
+                                <li><a href="viec/dich-thuat.html">Việc dịch thuật</a></li>
+                                <li><a href="viec/cac-cong-viec-viet-lach.html">Việc viết lách</a></li>
+                                <li><a href="viec/cac-cong-viec-thiet-ke.html">Việc thiết kế</a></li>
+                                <li><a href="viec/quan-ly-blog-fanpage.html">Việc quản lý fanpage</a></li>
+                                <li><a href="viec-lam-freelance.html">Cuộc thi thiết kế</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="job-category span6">
+                        <h4><a title="Được thuê nhiều nhất">Được thuê nhiều nhất</a></h4>
+                        <div class="row-fluid">
+                            <ul>
+                                <li><a href="freelancers/cpath_cac-cong-viec-marketing-kinh-doanh.html">Freelancer Marketing online</a></li>
+                                <li><a href="freelancers/cpath_cac-cong-viec-it-va-lap-trinh_chash_lap-trinh-web.html">Freelancer Làm web</a></li>
+                                <li><a href="freelancers/cpath_cac-cong-viec-it-va-lap-trinh_chash_ung-dung-di-dong.html">Freelancer Mobile app</a></li>
+                                <li><a href="freelancers/cpath_cac-cong-viec-it-va-lap-trinh_chash_toi-uu-cho-cong-cu-tim-kiem-seo.html">Freelancer SEO</a></li>
+                                <li><a href="freelancers/cpath_cac-cong-viec-thiet-ke.html">Freelancer Thiết kế</a></li>
+                                <li><a href="freelancers/cpath_cac-cong-viec-thiet-ke_chash_banner-quang-cao.html">Freelancer thiết kế banner</a></li>
+                                <li><a href="freelancers/cpath_cac-cong-viec-viet-lach.html">Freelancer Viết bài</a></li>
+                                <li><a href="freelancers/cpath_cac-cong-viec-viet-lach_chash_dich-thuat.html">Freelancer Dịch thuật</a></li>
+                                <li><a href="freelancers/cpath_cac-cong-viec-hanh-chinh_chash_nhap-du-lieu.html">Freelancer nhập dữ liệu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="span8 right-footer-block">
+                    <div class="sub-col footer-fl ft-right span4">
+                        <h4><a title="Freelancer">Freelancer</a></h4>
+                        <div class="row-fluid">
+                            <ul class="first span12">
+                                <li><a href="huong-dan-freelancer-kiem-tien-tren-vlance.html">Hướng dẫn freelancer kiếm tiền</a></li>
+                                <li><a href="huong-dan-freelancer-hoan-thien-ho-so-tren-vlance.html">Hướng dẫn hoàn thiện hồ sơ</a></li>
+                                <li><a href="huong-dan-freelancer-chao-gia-du-an.html">Hướng dẫn chào giá dự án</a></li>
+                                <li><a href="huong-dan-freelancer-nhan-thanh-toan.html">Hướng dẫn nhận thanh toán</a></li>
+                                <li><a href="huong-dan-freelancer-xac-thuc-thong-tin-tai-khoan.html">Hướng dẫn xác thực tài khoản</a></li>
+                                <li><a href="huong-dan-freelancer-lien-he-khach-hang.html">Hướng dẫn liên hệ khách hàng</a></li>
+                                <li><a href="huong-dan-freelancer-mua-credit.html">Hướng dẫn mua credit</a></li>
+                                <li><a href="huong-dan-freelancer-mua-vip.html">Hướng dẫn mua vip</a></li>
+                                <li><a href="huong-dan-su-dung-voucher.html" title="Hướng dẫn sử dụng Voucher">Hướng dẫn sử dụng Voucher</a></li>
+                                                            </ul>
+                        </div>
+                    </div>
+                    <div class="sub-col footer-cl ft-right span3">
+                        <h4><a title="Khách hàng">Khách hàng</a></h4>
+                        <div class="row-fluid">
+                            <ul class="first span12">
+                                <li><a href="huong-dan-thue-freelancer.html">Cách thuê freelancer</a></li>
+                                <li><a href="huong-dan-dang-viec.html">Hướng dẫn đăng việc</a></li>
+                                <li><a href="huong-dan-chon-freelancer.html">Hướng dẫn chọn freelancer</a></li>
+                                <li><a href="huong-dan-nap-tien.html">Hướng dẫn nạp tiền</a></li>
+                                <li><a href="huong-dan-quan-ly-du-an.html">Hướng dẫn quản lý dự án</a></li>
+                                <li><a href="huong-dan-ket-thuc-du-an.html">Hướng dẫn kết thúc dự án</a></li>
+                                <li><a href="huong-dan-lien-he-truc-tiep-freelancer.html">Hướng dẫn liên hệ freelancer</a></li>
+                                <li><a href="huong-dan-su-dung-voucher.html" title="Hướng dẫn sử dụng Voucher">Hướng dẫn sử dụng Voucher</a></li>
+                                                            </ul>
+                        </div>
+                    </div>
+                    <div class="sub-col about-us ft-right span2">
+                        <h4><a title="Giới thiệu">Giới thiệu</a></h4>
+                        <ul>
+                            <li><a href="page/gioi-thieu-ve-vlance.html" title="Về chúng tôi">Về chúng tôi</a></li>
+                                                        <li><a href="doi-tac.html" title="Đối tác">Đối tác</a></li>
+                            <li><a target="_blank" href="blog/index.html" title="Blog vLance">Blog vLance</a></li>
+                        </ul>
+                    </div>
+                    <div class="sub-col information ft-right span3">
+                        <h4>Liên hệ</h4>
+                        <ul>
+                                                        <li><a href="tro-giup/index.html" title="Trợ giúp">Trợ giúp</a></li>
+                            <li><a href="page/cau-hoi-thuong-gap.html">Câu hỏi thường gặp</a></li>
+                            <li><a href="#" onclick="_urq.push(['Feedback_Open', 'submit/bug']);">Thông báo lỗi <i class="fa fa-bullhorn" aria-hidden="true"></i></a></li>
+                            <!--<li><a href="/page/huong-dan-su-dung-cho-khach-hang">Hướng dẫn sử dụng</a></li>-->
+                            <li><a rel="nofollow" target="_blank" href="page/lien-he.html" title="Liên hệ">Liên hệ</a></li>
+                        </ul>
+                        <div class="social span12">
+                            <h4 class="row-fluid">Kết nối ngay</h4>
+                            <div class="row-fluid">
+                                <ul class="span12">
+                                    <li><a rel="nofollow" href="https://www.facebook.com/vlance.vn" target="_blank" class="i-facebook">
+                                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="https://plus.google.com/+VlanceVn" target="_blank" class="i-google">
+                                            <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="https://www.linkedin.com/company/vlance-vn" target="_blank" class="i-linkedin">
+                                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="https://twitter.com/vlancevn" target="_blank" class="i-twitter">
+                                            <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="https://www.youtube.com/user/vlancevietnam" target="_blank" class="i-youtube">
+                                            <i class="fa fa-youtube-square" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-logo">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span9">
+                    <div class="row-fluid">
+                        <div class="vlance-logo span2">
+                            <a href="index.html" title="Thuê freelancer Việt Nam nhanh và hiệu quả"></a>
+                        </div>
+                        <div class="copyright span8">
+                            <p>Freelancer Việt Nam - Lựa chọn số 1 của doanh nghiệp</p>
+                            <p>© 2019 vLance.vn</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="footer-payment">
+                        <div class="nlh-partner">
+                            <ul class="">
+                                <li>
+                                    <a rel="nofollow" class="visacrd" title="Thẻ thanh toán VisaCard" target="_blank">
+                                        <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" class="mastercrd" title="Thẻ thanh toán MasterCard" target="_blank">
+                                        <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" class="paypal" title="Hệ thống thanh toán trực tuyến Paypal" target="_blank">
+                                        <i class="fa fa-cc-paypal" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li><a rel="nofollow" class="vietcombank" title="Ngân hàng TMCP Ngoại Thương Việt Nam" target="_blank"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span9">
+                    <div class="footer-rule">
+                        <ul>
+                            <li><a href="page/dieu-khoan-su-dung.html" title="Điều khoản sử dụng">Điều khoản sử dụng |</a></li>
+                            <li><a href="page/dieu-khoan-su-dung-danh-cho-khach-hang.html" title="Điều khoản khách hàng">Điều khoản khách hàng |</a></li>
+                            <li><a href="page/dieu-khoan-su-dung-danh-cho-freelancer.html" title="Điều khoản freelancer">Điều khoản freelancer |</a></li>
+                                                        <li><a href="page/quy-che-hoat-dong.html" title="Quy chế hoạt động">Quy chế hoạt động |</a></li>
+                            <li><a href="page/chinh-sach-bao-mat.html" title="Chính sách bảo mật">Chính sách bảo mật |</a></li>
+                            <li><a href="page/giai-quyet-khieu-nai.html" title="Giải quyết khiếu nại">Giải quyết khiếu nại</a></li>
+                        </ul>
+                    </div>
+                    <p class="address">Chủ quản: Công ty Cổ phần Magenweb Việt Nam - Giấy phép đăng ký kinh doanh số 0106119703 - Cấp ngày 11/03/2013 - Tại Sở Kế hoạch và Đầu tư Hà Nội.</p>
+                    <p class="address">Địa chỉ: Tầng 4, số 3, ngõ 18, phố Yên Lãng, phường Láng Hạ, quận Đống Đa, Hà Nội - Hỗ trợ: <a href="{% static 'mailto:hotro@vlance.vn'%}">hotro@vlance.vn</a> - ĐT: (+84) 024.6684.1818</p>
+                </div>
+                <div class="dkkd">
+                    <a href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=46478" rel="nofollow" target="blank"><img alt="" title="" src="{% static 'media/dkkd-vlance.png'%} /></a>
+                </div>
+                            </div>
+        </div>
+    </div>
+    </footer>    </div>
+                </div>
+
+            <div class="row hidden">
+
+    <!--Start of Zopim Live Chat Script-->
+<!--    <script type="text/javascript">
+    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+    d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+    _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+    $.src='//v2.zopim.com/?2GsDXQdZjhBdNrYyN2LIU609ENqIS9mC';z.t=+new Date;$.
+    type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+    </script>-->
+    <!--End of Zopim Live Chat Script-->
+
+    <!--Start of Tawk.to Script-->
+            <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/593e4436282a395fdf74c430/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+        </script>
+        <!--End of Tawk.to Script-->
+
+        <script type="text/javascript">
+        var _urq = _urq || [];
+        _urq.push(['setGACode', 'UA-34003187-3']);
+        _urq.push(['initSite', '454cf2ce-9366-48df-8efc-13f19b9f42e1']);
+
+        (function() {
+            var ur = document.createElement('script');
+            ur.type = 'text/javascript';
+            ur.async = true;
+            ur.src = ('https:' == document.location.protocol ? 'https://cdn.userreport.com/userreport.js' : 'http://cdn.userreport.com/userreport.js');
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ur, s);
+        })();
+    </script>
+
+
+<script type="text/javascript">
+    </script>
+            </div>
+
+            <div class="row hidden">
+
+                        </div>
+        </div>
+    </body>
+
+</html>
